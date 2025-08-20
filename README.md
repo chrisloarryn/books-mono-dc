@@ -1,13 +1,15 @@
 # Book Reviews (Monorepo)
 
 Full‑stack solution for the "Book Reviews" requirement:
-- Backend: Node 18 + Express + MongoDB + Mongoose.
+- Backend: Node 18 + Moleculer (moleculer-web) + MongoDB and Mongoose.
 - Frontend: Nuxt 3 (SPA) + Pinia + Sass (from scratch).
 - Integrates with OpenLibrary API.
 - Optional Basic Auth for API and Front.
 
 ## Structure
-- apps/api – Express API
+- apps/api – Moleculer API (services + API Gateway)
+  - Services: health, books
+  - API Gateway: moleculer-web exposing routes "/" and "/api"
 - apps/web – Nuxt 3 SPA
 
 ## Prerequisites
