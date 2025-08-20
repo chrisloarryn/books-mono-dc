@@ -1,0 +1,42 @@
+services:
+  mongodb:
+    image: mongo:latest
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    environment:
+      - PORT=3001
+      - MONGO_URI=mongodb://mongodb:27017/bookreviews
+      - API_BASE_URL=http://localhost:3001
+      - BASIC_AUTH_USER=${BASIC_AUTH_USER:-demo}
+      - BASIC_AUTH_PASS=${BASIC_AUTH_PASS:-123456}
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    environment:
+      - NUXT_PUBLIC_API_BASE=http://localhost:3001/api
+      - NUXT_API_BASE_INTERNAL=http://api:3001/api
+      - NUXT_PUBLIC_BASIC_AUTH_USER=${BASIC_AUTH_USER:-demo}
+      - NUXT_PUBLIC_BASIC_AUTH_PASS=${BASIC_AUTH_PASS:-123456}
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  mongo-data:

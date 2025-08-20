@@ -1,0 +1,39 @@
+meta {
+  name: books-my-library-list2
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/api/books/my-library?q={{Q}}&sortRating={{SORT_RATING}}&excludeNoReview={{EXCLUDE_NO_REVIEW}}
+  body: none
+  auth: basic
+}
+
+params:query {
+  q: {{Q}}
+  sortRating: {{SORT_RATING}}
+  excludeNoReview: {{EXCLUDE_NO_REVIEW}}
+}
+
+auth:basic {
+  username: demo
+  password: 123456
+}
+
+vars:pre-request {
+  Q: 
+  SORT_RATING: 
+  EXCLUDE_NO_REVIEW: false
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Lists saved books with optional filters:
+  - Q: matches title or authors
+  - SORT_RATING: asc|desc
+  - EXCLUDE_NO_REVIEW: true to hide items without review
+}

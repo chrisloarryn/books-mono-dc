@@ -1,0 +1,23 @@
+meta {
+  name: Library - Front Cover Image
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/api/books/library/front-cover/{{SAMPLE_ID}}
+  body: none
+  auth: inherit
+}
+headers {
+    Authorization: "Bearer {{jwt}}"
+    Accept: image/*
+  }
+settings {
+  encodeUrl: true
+}
+
+notes {
+  Fetches the stored cover image for a saved book by id (SAMPLE_ID).
+  Response is binary image data.
+}

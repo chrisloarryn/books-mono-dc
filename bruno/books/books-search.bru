@@ -1,0 +1,27 @@
+meta {
+  name: Books - Search
+  type: http
+  seq: 2
+}
+
+vars {
+  Q=harry potter
+}
+
+get {
+  url: {{baseUrl}}/api/books/search?q={{Q}}
+  body: none
+  auth: inherit
+}
+headers {
+    Authorization: "Bearer {{jwt}}"
+    Accept: application/json
+  }
+settings {
+  encodeUrl: true
+}
+
+notes {
+  Searches books in OpenLibrary with query Q (default: "harry potter").
+  The response includes coverUrl. If a work is in the library, cover is served via our API.
+}

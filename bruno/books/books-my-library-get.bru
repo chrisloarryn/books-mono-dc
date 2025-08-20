@@ -1,0 +1,22 @@
+meta {
+  name: My Library - Get by ID
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/api/books/my-library/{{SAMPLE_ID}}
+  body: none
+  auth: inherit
+}
+headers {
+    Authorization: "Bearer {{jwt}}"
+    Accept: application/json
+  }
+settings {
+  encodeUrl: true
+}
+
+notes {
+  Retrieves a single saved book by ID. Set SAMPLE_ID in collection vars.
+}

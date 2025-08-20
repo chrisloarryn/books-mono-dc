@@ -1,0 +1,19 @@
+{
+  "name": "test-monorepo-dc",
+  "version": "1.0.0",
+  "description": "Book Reviews monorepo (API + Web)",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "echo Use per-package build scripts",
+    "dev:api": "npm --workspace apps/api run dev",
+    "dev:web": "npm --workspace apps/web run dev",
+    "dev": "npm run dev:api & npm run dev:web",
+    "postinstall": "npm --workspace apps/api run prepare || true"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  }
+}

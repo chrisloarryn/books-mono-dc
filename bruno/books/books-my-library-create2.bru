@@ -1,0 +1,42 @@
+meta {
+  name: books-my-library-create2
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/api/books/my-library
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: demo
+  password: 123456
+}
+
+body:json {
+  {
+    "workKey": "{{WORK_KEY}}",
+    "title": "{{TITLE}}",
+    "authors": "{{AUTHORS}}",
+    "year": {{YEAR}},
+    "review": "{{REVIEW}}",
+    "rating": {{RATING}},
+    "coverUrl": "{{COVER_URL}}"
+  }
+}
+
+vars:pre-request {
+  TITLE: Sample Book
+  AUTHORS: John Doe|Jane Roe
+  YEAR: 2001
+  REVIEW: Un libro de ejemplo para probar el endpoint.
+  RATING: 4
+  COVER_URL: https://covers.openlibrary.org/b/id/8231856-M.jpg
+  WORK_KEY: /works/OL82563W
+}
+
+settings {
+  encodeUrl: true
+}

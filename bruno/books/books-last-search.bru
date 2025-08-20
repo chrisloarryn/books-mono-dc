@@ -1,0 +1,20 @@
+meta {
+  name: books-last-search
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/api/books/last-search
+  body: none
+  auth: basic
+}
+
+auth:basic {
+  username: demo
+  password: 123456
+}
+
+settings {
+  encodeUrl: true
+}

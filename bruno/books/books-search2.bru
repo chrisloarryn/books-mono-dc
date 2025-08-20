@@ -1,0 +1,28 @@
+meta {
+  name: books-search2
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/api/books/search?q={{Q}}
+  body: none
+  auth: basic
+}
+
+params:query {
+  q: {{Q}}
+}
+
+auth:basic {
+  username: demo
+  password: 123456
+}
+
+vars:pre-request {
+  Q: spring boot
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,23 @@
+{
+  "name": "book-reviews-api",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "prepare": "echo API prepared"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "mongoose": "^8.5.1",
+    "moleculer": "^0.14.33",
+    "moleculer-web": "^0.10.7"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.3"
+  }
+}

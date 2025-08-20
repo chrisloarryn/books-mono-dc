@@ -12,3 +12,6 @@ yarn-error.log*
 /.idea
 /apps/*/node_modules
 /apps/web/.nuxt
+.DS_Store
+/apps/*/.env
+/.junie

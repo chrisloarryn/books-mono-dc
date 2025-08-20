@@ -1,0 +1,22 @@
+meta {
+  name: My Library - Delete
+  type: http
+  seq: 8
+}
+
+delete {
+  url: {{baseUrl}}/api/books/my-library/{{SAMPLE_ID}}
+  body: none
+  auth: inherit
+}
+headers {
+    Authorization: "Bearer {{jwt}}"
+    Accept: application/json
+  }
+settings {
+  encodeUrl: true
+}
+
+notes {
+  Deletes the saved book by ID. Requires SAMPLE_ID.
+}
