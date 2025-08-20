@@ -15,3 +15,6 @@ yarn-error.log*
 .DS_Store
 /apps/*/.env
 /.junie
+
+# Build artifacts
+apps/*/dist
