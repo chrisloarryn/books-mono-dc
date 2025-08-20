@@ -13,7 +13,7 @@ Full‑stack solution for the "Book Reviews" requirement:
 - apps/web – Nuxt 3 SPA
 
 ## Prerequisites
-- Node 18+
+- Node 22+
 - MongoDB running locally (default URI: mongodb://localhost:27017/bookreviews)
 
 ## Setup
