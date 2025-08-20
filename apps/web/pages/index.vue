@@ -47,6 +47,8 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
 import { useSearchStore, type SearchItem } from '@/stores/search';
+// Explicitly import component to ensure registration even if auto-import fails
+import SearchSearchResultCard from '@/components/search/search-result-card.vue';
 
 const placeholder = 'Escribe el nombre de un Libro para continuar';
 const store = useSearchStore();

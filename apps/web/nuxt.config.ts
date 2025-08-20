@@ -12,5 +12,9 @@ export default defineNuxtConfig({
       basicAuthPass: process.env.NUXT_PUBLIC_BASIC_AUTH_PASS || '123456',
     },
   },
+  // Set Nitro compatibility date as recommended by Nuxt/Nitro logs
+  nitro: {
+    compatibilityDate: '2025-08-20',
+  },
   devtools: { enabled: false },
 });

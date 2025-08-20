@@ -41,6 +41,9 @@
 import { useLibraryStore } from '@/stores/library';
 import type { LibraryItem } from '@/stores/library';
 import { MAX_REVIEW_CHARS } from '@/constants';
+// Explicit imports to ensure component resolution even if auto-import fails
+import LibraryLibraryFilters from '@/components/library/library-filters.vue';
+import LibraryLibraryItemCard from '@/components/library/library-item-card.vue';
 
 const store = useLibraryStore();
 const editId = ref<string | null>(null);

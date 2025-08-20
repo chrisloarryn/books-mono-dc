@@ -36,7 +36,7 @@ const ApiService = {
           credentials: false,
           maxAge: 3600,
         },
-        onBeforeCall: (ctx, route, req, res) => {
+          onBeforeCall: (ctx: any, route: any, req: any, res: any) => {
             // No authentication for health check
             if (req.url === '/health') return;
             // Use the basic auth hook for all other routes
